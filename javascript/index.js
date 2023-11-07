@@ -131,4 +131,47 @@ makeBroccoli();
 
 
 // Bonus 2 - Promise all
-// ...
+let pr1 = obtainInstruction('brusselsSprouts', 0);
+let pr2 = obtainInstruction('brusselsSprouts', 1);
+let pr3 = obtainInstruction('brusselsSprouts', 2);
+let pr4 = obtainInstruction('brusselsSprouts', 3);
+let pr5 = obtainInstruction('brusselsSprouts', 4);
+let pr6 = obtainInstruction('brusselsSprouts', 5);
+let pr7 = obtainInstruction('brusselsSprouts', 6);
+let pr8 = obtainInstruction('brusselsSprouts', 7);
+Promise.all( [pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8] )
+.then( (step0) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step0}</li>`
+  return obtainInstruction('brusselsSprouts', 1);
+})
+.then( (step1) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`
+  return obtainInstruction('brusselsSprouts', 2);
+})
+.then( (step2) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`
+  return obtainInstruction('brusselsSprouts', 3);
+})
+.then( (step3) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`
+  return obtainInstruction('brusselsSprouts', 4);
+})
+.then( (step4) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`
+  return obtainInstruction('brusselsSprouts', 5);
+})      
+.then( (step5) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`
+  return obtainInstruction('brusselsSprouts', 6);
+})
+.then( (step6) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`
+  return obtainInstruction('brusselsSprouts', 7);
+})
+.then( (step7) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${'Brussels sprouts are ready!'}</li>`
+  document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  return obtainInstruction('brusselsSprouts', 8);
+})
+.catch((error) => console.log(error));
